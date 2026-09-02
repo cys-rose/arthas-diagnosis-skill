@@ -57,6 +57,11 @@ export function renderDashboardPage(): string {
   .a34 { color: #61afef; } .a35 { color: #c678dd; } .a36 { color: #56b6c2; } .a37 { color: #c9ccd4; }
   .a90 { color: #7f848e; } .a91 { color: #ff7b86; } .a92 { color: #b5e48c; } .a93 { color: #ffd479; }
   .a94 { color: #82cfff; } .a95 { color: #d8a2e8; } .a96 { color: #7adfd8; } .a97 { color: #ffffff; }
+  /* ANSI SGR 背景色映射（调色板对齐 xterm.js 默认色，与内嵌 arthas console 视觉一致） */
+  .a40 { background-color: #000000; } .a41 { background-color: #cd3131; } .a42 { background-color: #0dbc79; } .a43 { background-color: #e5e510; }
+  .a44 { background-color: #2472c8; } .a45 { background-color: #bc3fbc; } .a46 { background-color: #11a8cd; } .a47 { background-color: #e5e5e5; }
+  .a100 { background-color: #666666; } .a101 { background-color: #f14c4c; } .a102 { background-color: #23d18b; } .a103 { background-color: #f5f543; }
+  .a104 { background-color: #3b8eea; } .a105 { background-color: #d670d6; } .a106 { background-color: #29b8db; } .a107 { background-color: #ffffff; }
   iframe.console { flex: 1; border: 0; background: #000; display: block; }
   #empty { padding: 40px; text-align: center; color: #9ba0ab; }
 </style>

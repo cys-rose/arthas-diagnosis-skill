@@ -35,6 +35,17 @@ test('ansiToHtml：未闭合的 span 结尾自动闭合', () => {
   assert.equal(ansiToHtml('\x1b[31mred'), '<span class="a31">red</span>');
 });
 
+test('ansiToHtml：背景色码转 span（arthas 表头 bold+黑字+白底）', () => {
+  assert.equal(
+    ansiToHtml('\x1b[1;30;47mNAME\x1b[m'),
+    '<span class="a-bold"><span class="a30"><span class="a47">NAME</span></span></span>',
+  );
+});
+
+test('ansiToHtml：亮色背景码（100–107）也支持', () => {
+  assert.equal(ansiToHtml('\x1b[107mx'), '<span class="a107">x</span>');
+});
+
 test('renderOutput：终端文本按行渲染，\\r\\n 归一', () => {
   const html = renderOutput('line1\r\nline2');
   assert.equal(html, '<div class="t-line">line1</div><div class="t-line">line2</div>');

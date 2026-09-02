@@ -18,7 +18,7 @@ export function esc(s) {
 export var MAX_OUTPUT_CHARS = 50000;
 
 /**
- * 最小 ANSI SGR → HTML span 转换：支持 0(reset)、1(bold)、30–37/90–97(前景色)。
+ * 最小 ANSI SGR → HTML span 转换：支持 0(reset)、1(bold)、30–37/90–97(前景色)、40–47/100–107(背景色)。
  * 先整体 HTML 转义再按转义序列切分；未支持的序列直接丢弃。结尾自动闭合未闭合的 span。
  */
 export function ansiToHtml(text) {
@@ -38,7 +38,7 @@ export function ansiToHtml(text) {
       } else if (c === 1) {
         out += '<span class="a-bold">';
         open++;
-      } else if ((c >= 30 && c <= 37) || (c >= 90 && c <= 97)) {
+      } else if ((c >= 30 && c <= 37) || (c >= 90 && c <= 97) || (c >= 40 && c <= 47) || (c >= 100 && c <= 107)) {
         out += '<span class="a' + c + '">';
         open++;
       }
