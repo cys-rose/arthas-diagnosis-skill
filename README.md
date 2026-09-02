@@ -27,8 +27,6 @@ command = "node"
 args = ["/absolute/path/to/arthas-diagnostic-gateway/dist/index.js"]
 ```
 
-再把 `skill/AGENTS.snippet.md` 中 `# Arthas 本地诊断手册` 标题以下的内容粘贴到项目的 AGENTS.md。
-
 ## 接入 Kimi Code
 
 在 `~/.kimi-code/mcp.json` 中注册（用户级，全项目共享）：
@@ -71,6 +69,8 @@ cp -r skill/arthas-diagnostic ~/.kimi-code/skills/arthas-diagnostic
 - 顶栏「关闭 Gateway」按钮：退出 Gateway 进程、释放 Dashboard 端口（二次确认；**不卸载任何 arthas agent**，agent 常驻，下个会话自动收养）。
 - 数据只存内存：刷新不丢诊断现场，Gateway 重启清空。Gateway 退出不会自动卸载任何 arthas agent。
 
+![alt text](docs/dashboard_image.png)
+
 ## 测试
 
 ```bash
@@ -86,9 +86,3 @@ npm run typecheck
 | `ARTHAS_LIB_DIR` | `~/.arthas/lib` | arthas 安装根目录 |
 | `JAVA_BIN` | `java` | 执行 arthas-boot 的 java 命令 |
 | `ARTHAS_GATEWAY_DASHBOARD_PORT` | `18765` | Dashboard 首选端口（被占用时自动回退随机端口） |
-
-## 设计文档
-
-- 术语表：`CONTEXT.md`
-- 架构决策：`docs/adr/0001` ~ `0009`
-- Spec：`docs/specs/0001-arthas-diagnostic-gateway.md`

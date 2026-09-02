@@ -23,4 +23,5 @@ npm-debug.log*
 .env
 .env.*
 
-docs/
+docs/adr/
+docs/specs/
