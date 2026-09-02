@@ -69,6 +69,7 @@ cp -r skill/arthas-diagnostic ~/.kimi-code/skills/arthas-diagnostic
 - 顶栏「关闭 Gateway」按钮：退出 Gateway 进程、释放 Dashboard 端口（二次确认；**不卸载任何 arthas agent**，agent 常驻，下个会话自动收养）。
 - 数据只存内存：刷新不丢诊断现场，Gateway 重启清空。Gateway 退出不会自动卸载任何 arthas agent。
 
+coding agent在调用arthas命令时，会实时在该页面左侧展示结果；右侧为arthas原生web终端，用户可以手动输入arthas命令执行。
 ![alt text](docs/dashboard_image.png)
 
 ## 测试
