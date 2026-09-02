@@ -1,0 +1,28 @@
+{
+  "name": "arthas-diagnostic-gateway",
+  "version": "0.1.0",
+  "description": "Local MCP gateway that lets conversational agents drive arthas diagnostics on local JVMs, with a browser Dashboard for human observability.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "bin": {
+    "arthas-diagnostic-gateway": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "e2e": "node --test --test-timeout=180000 \"test-e2e/**/*.test.ts\"",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
