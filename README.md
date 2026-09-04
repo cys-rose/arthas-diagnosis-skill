@@ -27,6 +27,12 @@ command = "node"
 args = ["/absolute/path/to/arthas-diagnostic-gateway/dist/index.js"]
 ```
 
+安装诊断手册 skill：
+
+```bash
+cp -r skill/arthas-diagnostic ~/.codex/skills/arthas-diagnostic
+```
+
 ## 接入 Kimi Code
 
 在 `~/.kimi-code/mcp.json` 中注册（用户级，全项目共享）：
